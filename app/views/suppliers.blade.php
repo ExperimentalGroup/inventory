@@ -53,6 +53,46 @@
           <div class="row">
             <div class="col s12 m12 l12">
               <div class="card-panel">
+                <span class="card-title">Add New Suppliers</span>
+                <div class="divider"></div>
+                <div class="card-content">
+                  <div class="col s12 m12 l4">
+                      <div class="form-group">
+                      <label for="price">Supplier ID</label>
+                      <input type="text" class="form-control" name="suppID" id="suppID" placeholder="SuppID">
+                      </div>
+                      <label for="price">Company Name</label>
+                      <div class="form-group">
+                      <input type="text" class="form-control" name="compName" id="compName" placeholder="CompName">
+                      </div>
+                      <div class="form-group">
+                      <label for="price">Owner Name</label>
+                      <input type="text" class="form-control" name="ownName" id="ownName" placeholder="OwnName">
+                      </div>
+                      <div class="form-group">
+                      <label for="price">Contact Number</label>
+                      <input type="text" class="form-control" name="contNumb" id="contNumb" placeholder="ContNumb">
+                      </div>
+                      <div class="form-group">
+                      <label for="price">Address</label>
+                      <input type="text" class="form-control" name="suppAdd" id="suppAdd" placeholder="SuppAdd">
+                      </div>
+                      <a class="waves-effect waves-light btn btn-small center-text">ADD</a>
+                    </div>
+                  </div>
+           
+
+                  <div class="clearfix">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s12 m12 l12">
+              <div class="card-panel">
                 <span class="card-title">gHuB Suppliers Available</span>
                 <div class="divider"></div>
                 <div class="card-content">

@@ -50,6 +50,39 @@
             <span class="page-title">Branches</span>
           </div>
 
+            <div class="row">
+            <div class="col s12 m12 l12">
+              <div class="card-panel">
+                <span class="card-title">Add New Branches</span>
+                <div class="divider"></div>
+                <div class="card-content">
+                  <div class="col s12 m12 l4">
+                      <div class="form-group">
+                      <label for="price">Branch ID</label>
+                      <input type="text" class="form-control" name="brnchID" id="brnchID" placeholder="BranchID">
+                      </div>
+                      <div class="form-group">
+                      <label for="price">Branch Name</label>
+                      <input type="text" class="form-control" name="brnchName" id="brnchName" placeholder="BranchName">
+                      </div>
+                      <div class="form-group">
+                      <label for="price">Branch Address</label>
+                      <input type="text" class="form-control" name="brnchAdd" id="brnchAdd" placeholder="BranchAdd">
+                      </div>
+                      <a class="waves-effect waves-light btn btn-small center-text">ADD</a>
+                    </div>
+                  </div>
+           
+
+                  <div class="clearfix">
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
           <div class="row">
             <div class="col s12 m12 l12">
               <div class="card-panel">
