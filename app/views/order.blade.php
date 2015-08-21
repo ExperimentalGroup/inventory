@@ -95,53 +95,31 @@
                         <tr>
                           <th>Order ID</th>
                           <th>Supplier</th>
-                          <th>Product Ordered</th>
-                          <th>Quantity</th>
-                          <th>Product Subtotals</th>
-                          <th>Total Price</th>
+                          <!-- <th>Product Ordered</th> -->
+                          <!-- <th>Quantity</th> -->
+                          <!-- <th>Product Subtotals</th> -->
+                          <!-- <th>Total Price</th> -->
                           <th>Date Ordered</th>
                           <th>Status</th>
+                          <th>Placed by</th>
                         </tr>
                       </thead>
 
                       <tbody>
+                        @foreach($order as $order)
                         <tr>
-                          <td>ID DAW</td>
-                          <td>Apple PH</td>
-                          <td>iPhone 6</td>
-                          <td>20</td>
-                          <td>30,000</td>
-                          <td>P600,000</td>
-                          <td>06/30/2015</td>
-                          <td class="yellow-text bold">Pending</td>
-                          <!--<td>
+                          <td>{{ $order-> strOrdersID }}</td>
+                          <td>{{ $order-> strSupplID }}</td>
+                          <td>{{ $order-> dtOrdDate }}</td>
+                          <td>Pending</td>
+                          <td>{{ $order-> strPlacedBy }}</td>                          
+                          <td>
                             <div class="center-btn">
-                              <a class="waves-effect waves-light btn btn-small center-text">Edit</a>
-                              <a class="waves-effect waves-light btn btn-small center-text">Cancel</a>
+                              <a class="waves-effect waves-light btn btn-small center-text" href="/details">View Details</a>
                             </div>
-                          </td>-->
+                          </td>
                         </tr>
-                        <tr>
-                          <td>ID DAW</td>
-                          <td>Razer</td>
-                          <td>Razer Deathadder 2013</td>
-                          <td>15</td>
-                          <td>2,350</td>
-                          <td>P35,250</td>
-                          <td>07/18/2015</td>
-                          <td class="green-text bold">Accepted</td>
-                        </tr>
-
-                        <tr>
-                          <td>ID DAW</td>
-                          <td>Garena Phillippines</td>
-                          <td>League of Legends Mouse Pad</td>
-                          <td>50</td>
-                          <td>150</td>
-                          <td>P7,500</td>
-                          <td>04/09/2015</td>
-                          <td class="red-text bold">Declined</td>
-                        </tr>
+                        @endforeach
                       </tbody>
                     </table>
                   </div>

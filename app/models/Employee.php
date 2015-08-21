@@ -3,5 +3,5 @@
 class Employee extends Eloquent
 {
 	protected $table = 'tblEmployees';
-	//protected $fillable = array('strEmpFName', 'strEmpLName', 'intEmpAge', 'strEmpStatus', 'strEmpAddress', 'strEmpBrchID', 'strEmpRoleID');
+	protected $fillable = array('strEmpFName', 'strEmpLName','strEmpStatus', 'strEmpAddress', 'strEmpBrchID', 'strEmpRoleID');
 }

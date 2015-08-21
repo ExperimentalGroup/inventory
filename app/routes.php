@@ -31,11 +31,9 @@ Route::get('/suppliers', 'HomeController@suppliers');
 
 Route::get('/delivery', 'HomeController@delivery');
 
+Route::get('/details', 'HomeController@details');
 
-Route::get('/order', function()
-{
-	return View::make('order');
-});
+Route::get('/order', 'HomeController@order');
 
 Route::get('/request', function()
 {
