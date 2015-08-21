@@ -30,6 +30,7 @@
               <li class="bold"><a href="/inventory">Inventory</a></li>
               <li class="bold"><a href="/order">Order</a></li>
               <li class="bold"><a href="/request">Requests</a></li>
+              <li class="bold"><a href="/delivery">Delivery</a></li>
               <li class="bold"><a href="/branches">Branches</a></li>
               <li class="bold"><a href="/employees">Employees</a></li>
               <li class="bold active"><a href="/suppliers">Suppliers</a></li>
@@ -76,14 +77,15 @@
                       </thead>
 
                       <tbody>
+                        @foreach($suppliers as $suppliers)
                         <tr>
-                          <td>SUPPL0001</td>  
-                          <td>Sony Enterprises Ltd</td>
-                          <td>Legaspi, Melody</td>
-                          <td>09162451291</td>  
-                          <td>RBC Tower, Ayala Ave.,Makati City</td>
+                          <td>{{ $suppliers->strSuppID }}</td>  
+                          <td>{{ $suppliers->strSuppCompanyName }}</td>
+                          <td>{{ $suppliers->strSuppOwnerLName . ", " . $suppliers->strSuppOwnerFName}}</td>
+                          <td>{{ $suppliers->strSuppContactNo }}</td>  
+                          <td>{{ $suppliers->strSuppAddress}}</td>
                         </tr>
-                        
+                        @endforeach
                       </tbody>
                     </table>
                   </div>

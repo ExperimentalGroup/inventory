@@ -30,6 +30,7 @@
               <li class="bold"><a href="/inventory">Inventory</a></li>
               <li class="bold"><a href="/order">Order</a></li>
               <li class="bold"><a href="/request">Requests</a></li>
+              <li class="bold"><a href="/delivery">Delivery</a></li>
               <li class="bold"><a href="/branches">Branches</a></li>
               <li class="bold"><a href="/employees">Employees</a></li>
               <li class="bold"><a href="/suppliers">Suppliers</a></li>

@@ -11,39 +11,26 @@
 |
 */
 
-Route::get('/', function()
-{
-	if(Session::has('username'))
-	{
-	return Redirect::to('/index');
-	}
-	else
-	return View::make('login');
-});
 
 
-Route::get('/inventory', function()
-{
-	return View::make('inventory');
-});
+Route::get('/', 'loginController@showWelcome');
 
-Route::get('/index', function()
-{
-	if(!Session::has('username'))
-	{
-	return Redirect::to('/');
-	}
-	else
-	return View::make('index');
-});
+Route::get('/index', 'loginController@remembLog');
 
-Route::post('/login', 'loginController@LogIn');
+Route::post('/login', array('uses'=>'loginController@LogIn'));
 
-Route::get('/logout', function()
-{
-	Session::flush();
-	return Redirect::to('/');
-});
+Route::get('/logout', 'loginController@LogOut');
+
+Route::get('/inventory', 'HomeController@inventoree');
+
+Route::get('/employees', 'HomeController@employee');
+
+Route::get('/branches', 'HomeController@branches');
+
+Route::get('/suppliers', 'HomeController@suppliers');
+
+Route::get('/delivery', 'HomeController@delivery');
+
 
 Route::get('/order', function()
 {
@@ -53,19 +40,4 @@ Route::get('/order', function()
 Route::get('/request', function()
 {
 	return View::make('request');
-});
-
-Route::get('/branches', function()
-{
-	return View::make('branches');
-});
-
-Route::get('/employees', function()
-{
-	return View::make('employee');
-});
-
-Route::get('/suppliers', function()
-{
-	return View::make('suppliers');
 });

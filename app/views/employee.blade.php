@@ -30,6 +30,7 @@
               <li class="bold"><a href="/inventory">Inventory</a></li>
               <li class="bold"><a href="/order">Order</a></li>
               <li class="bold"><a href="/request">Requests</a></li>
+              <li class="bold"><a href="/delivery">Delivery</a></li>
               <li class="bold"><a href="/branches">Branches</a></li>
               <li class="bold active"><a href="/employees">Employees</a></li>
               <li class="bold"><a href="/suppliers">Suppliers</a></li>
@@ -49,6 +50,8 @@
             <span class="page-title">Employees</span>
           </div>
 
+           
+
           <div class="row">
             <div class="col s12 m12 l12">
               <div class="card-panel">
@@ -61,7 +64,6 @@
                       <input id="search" type="text" placeholder="Search by name"/>
                     </div>
                   </div>
-
            
 
                   <div class="col s12 m12 l12 overflow-x">
@@ -75,25 +77,16 @@
                           <th>Address</th>
                         </tr>
                       </thead>
-
                       <tbody>
+                       @foreach($employees as $employees)
                         <tr>
-                          <td>EMPL00001</td>  
-                          <td>Tolentino, Earvin</td>
-                          <td>18</td>
-                          <td>Regular</td>  
-                          <td>44 Rizal St.,Mandaluyong City</td>
+                          <td>{{ $employees->strEmpID }}</td>  
+                          <td>{{ $employees->strEmpLName . ", " . $employees->strEmpFName}}</td>
+                          <td>{{ $employees->intEmpAge }}</td>
+                          <td>{{ $employees->strEmpStatus }}</td>  
+                          <td>{{ $employees->strEmpAddress }}</td>
                         </tr>
-                        
-                        <tbody>
-                        <tr>
-                          <td>EMPL00002</td>  
-                          <td>Seoul-Oh, Han</td>
-                          <td>21</td>
-                          <td>Admin</td>  
-                          <td>North Avenue, Quezon City</td>
-                        </tr>
-
+                        @endforeach
                       </tbody>
                     </table>
                   </div>

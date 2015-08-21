@@ -30,6 +30,7 @@
               <li class="bold"><a href="/inventory">Inventory</a></li>
               <li class="bold active"><a href="/order">Order</a></li>
               <li class="bold"><a href="/request">Requests</a></li>
+              <li class="bold"><a href="/delivery">Delivery</a></li>
               <li class="bold"><a href="/branches">Branches</a></li>
               <li class="bold"><a href="/employees">Employees</a></li>
               <li class="bold"><a href="/suppliers">Suppliers</a></li>
@@ -92,6 +93,7 @@
                     <table class="centered">
                       <thead>
                         <tr>
+                          <th>Order ID</th>
                           <th>Supplier</th>
                           <th>Product Ordered</th>
                           <th>Quantity</th>
@@ -99,12 +101,12 @@
                           <th>Total Price</th>
                           <th>Date Ordered</th>
                           <th>Status</th>
-                          <th>Actions</th>
                         </tr>
                       </thead>
 
                       <tbody>
                         <tr>
+                          <td>ID DAW</td>
                           <td>Apple PH</td>
                           <td>iPhone 6</td>
                           <td>20</td>
@@ -112,15 +114,15 @@
                           <td>P600,000</td>
                           <td>06/30/2015</td>
                           <td class="yellow-text bold">Pending</td>
-                          <td>
+                          <!--<td>
                             <div class="center-btn">
-                              <a class="waves-effect waves-light btn btn-small center-text">Resend</a>
-                              <a class="waves-effect waves-light btn btn-small center-text">Received</a>
+                              <a class="waves-effect waves-light btn btn-small center-text">Edit</a>
                               <a class="waves-effect waves-light btn btn-small center-text">Cancel</a>
                             </div>
-                          </td>
+                          </td>-->
                         </tr>
                         <tr>
+                          <td>ID DAW</td>
                           <td>Razer</td>
                           <td>Razer Deathadder 2013</td>
                           <td>15</td>
@@ -128,16 +130,10 @@
                           <td>P35,250</td>
                           <td>07/18/2015</td>
                           <td class="green-text bold">Accepted</td>
-                          <td>
-                            <div class="center-btn">
-                             <a class="waves-effect waves-light btn btn-small center-text">Resend</a>
-                              <a class="waves-effect waves-light btn btn-small center-text">Received</a>
-                              <a class="waves-effect waves-light btn btn-small center-text">Cancel</a>
-                            </div>
-                          </td>
                         </tr>
 
                         <tr>
+                          <td>ID DAW</td>
                           <td>Garena Phillippines</td>
                           <td>League of Legends Mouse Pad</td>
                           <td>50</td>
@@ -145,13 +141,6 @@
                           <td>P7,500</td>
                           <td>04/09/2015</td>
                           <td class="red-text bold">Declined</td>
-                          <td>
-                            <div class="center-btn">
-                             <a class="waves-effect waves-light btn btn-small center-text">Resend</a>
-                              <a class="waves-effect waves-light btn btn-small center-text">Received</a>
-                              <a class="waves-effect waves-light btn btn-small center-text">Cancel</a>
-                            </div>
-                          </td>
                         </tr>
                       </tbody>
                     </table>

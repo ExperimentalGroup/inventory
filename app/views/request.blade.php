@@ -30,6 +30,7 @@
               <li class="bold"><a href="/inventory">Inventory</a></li>
               <li class="bold"><a href="/order">Order</a></li>
               <li class="bold active"><a href="/request">Requests</a></li>
+              <li class="bold"><a href="/delivery">Delivery</a></li>
               <li class="bold"><a href="/branches">Branches</a></li>
               <li class="bold"><a href="/employees">Employees</a></li>
               <li class="bold"><a href="/suppliers">Suppliers</a></li>
@@ -90,6 +91,7 @@
                     <table class="centered">
                       <thead>
                         <tr>
+                          <th>Request ID</th>
                           <th>Branch</th>
                           <th>Product Requested</th>
                           <th>Quantity</th>
@@ -103,6 +105,7 @@
 
                       <tbody>
                         <tr>
+                          <td>ID DAW</td>
                           <td>gHub Cubao</td>
                           <td>Samsung Galaxy Y S5360</td>
                           <td>20</td>
@@ -114,7 +117,6 @@
                             <div class="center-btn">
                               <a class="waves-effect waves-light btn btn-small center-text">Accept</a>
                               <a class="waves-effect waves-light btn btn-small center-text">Decline</a>
-                              <a class="waves-effect waves-light btn btn-small center-text">Payment</a>
                             </div>
                           </td>
                         </tr>
@@ -137,7 +139,7 @@
             </div>
           </div>
         </div>
-
+<!--
                   <div class="row">
             <div class="col s12 m12 l12">
               <div class="card-panel">
@@ -232,7 +234,7 @@
 
                   </div>
 
-      </div>
+      </div> -->
     </main>
 
     <!-- SCRIPTS START -->

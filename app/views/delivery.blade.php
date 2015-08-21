@@ -27,10 +27,10 @@
                 Branch: <span class="bold">Main</span>
               </div>
               <li class="bold"><a href="/index">Dashboard</a></li>
-              <li class="bold active"><a href="/inventory">Inventory</a></li>
+              <li class="bold"><a href="/inventory">Inventory</a></li>
               <li class="bold"><a href="/order">Order</a></li>
               <li class="bold"><a href="/request">Requests</a></li>
-              <li class="bold"><a href="/delivery">Delivery</a></li>
+              <li class="bold active"><a href="/delivery">Delivery</a></li>
               <li class="bold"><a href="/branches">Branches</a></li>
               <li class="bold"><a href="/employees">Employees</a></li>
               <li class="bold"><a href="/suppliers">Suppliers</a></li>
@@ -47,13 +47,43 @@
         <!-- ACTUAL PAGE CONTENT GOES HERE -->
         <div class="row">
           <div class="col s12 m12 l12">
-            <span class="page-title">Inventory</span>
+            <span class="page-title">Delivery</span>
           </div>
 
           <div class="row">
             <div class="col s12 m12 l12">
               <div class="card-panel">
-                <span class="card-title">Items on current branch</span>
+                <span class="card-title">Delivery from Suppliers</span>
+                <div class="divider"></div>
+                <div class="card-content">
+                  <div class="col s12 m12 l4">
+                    <div class="input-field">
+                      <i class="prefix mdi-action-search"></i>
+                      <input id="search" type="text" placeholder="Search by name"/>
+                    </div>
+                  </div>
+
+                  
+
+
+                  <!-- <p>
+                    You have no items.
+                  </p> -->
+
+                  <div class="clearfix">
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+                  <div class="row">
+            <div class="col s12 m12 l12">
+              <div class="card-panel">
+                <span class="card-title">Delivery to Branches</span>
                 <div class="divider"></div>
                 <div class="card-content">
                   <div class="col s12 m12 l4">
@@ -66,25 +96,24 @@
                   <div class="col s12 m12 l6 offset-l2">
                     <div class="col s12 m12 l4 input-field">
                       <select>
-                        <option value="" disabled selected>Model (Any)</option>
-                        <option value="1">Cellphone</option>
-                        <option value="2">Mouse</option>
+                        <option value="" disabled selected>Quantity (Any)</option>
+                        <option value="1">Less than 50</option>
+                        <option value="2">50 or more</option>
                       </select>
                     </div>
                     <div class="col s12 m12 l4 input-field">
                       <select>
-                        <option value="" selected>Brand (Any)</option>
-                        <option value="1">Razer</option>
-                        <option value="2">Apple</option>
-                        <option value="3">ASUS</option>
+                        <option value="" selected>Branch (Any)</option>
+                        <option value="1">gHub West Avenue</option>
+                        <option value="2">gHub Eastwood</option>
                       </select>
                     </div>
                     <div class="col s12 m12 l4 input-field">
                       <select>
                         <option value="" selected>Status (Any)</option>
-                        <option value="1">Good</option>
-                        <option value="2">Critical</option>
-                        <option value="3">Empty</option>
+                        <option value="1">Accepted</option>
+                        <option value="2">Pending</option>
+                        <option value="3">Declined</option>
                       </select>
                     </div>
                   </div>
@@ -93,51 +122,59 @@
                     <table class="centered">
                       <thead>
                         <tr>
-                          <th>Product ID</th>
-                          <th>Product Name</th>
-                          <th>Brand</th>
-                          <th>Model</th>
-                          <th>Retail Price</th>
-                          <th>Wholesale Price</th>
-                          <th>Available Stock</th>
+                          <th>Branch</th>
+                          <th>Product Requested</th>
+                          <th>Quantity</th>
+                          <th>Product Subtotals</th>
+                          <th>Total Price</th>
+                          <th>Date Requested</th>
                           <th>Status</th>
+                          <th>Actions</th>
                         </tr>
                       </thead>
 
                       <tbody>
-                         @foreach($inventory as $inventory)
                         <tr>
-                          <td>{{ $inventory-> strProdID }}</td>
-                          <td>Name</td>
-                          <td>Brand</td>
-                          <td>Mudel</td>
-                          <td>{{ $inventory-> dblCurRetPrice }}</td>
-                          <td>{{ $inventory-> dblCurWPrice }}</td>
-                          <td>{{ $inventory-> intAvailQty }}</td>
-                          <td class="red-text bold">INCOMPLETE PA</td>
+                          <td>gHub West Avenue</td>
+                          <td>LG Flat Screen Monitor</td>
+                          <td>10</td>
+                          <td>P1,500.00</td>
+                          <td>P15,000.00</td>
+                          <td>06/18/2015</td>
+                          <td class="yellow-text bold">Pending</td>
                           <td>
                             <div class="center-btn">
-                              <a class="waves-effect waves-light btn btn-small center-text" href="/order">ADJUST</a>
+                              <a class="waves-effect waves-light btn btn-small center-text">Resend</a>
+                              <a class="waves-effect waves-light btn btn-small center-text">Received</a>
+                              <a class="waves-effect waves-light btn btn-small center-text">Cancel</a>
                             </div>
                           </td>
                         </tr>
-                        @endforeach
+                        <tr>
+                          <td>gHub Eastwood</td>
+                          <td>Creative Dual Speakers with Bass</td>
+                          <td>15</td>
+                          <td>P500.00</td>
+                          <td>P7,500.00</td>
+                          <td>03/31/2015</td>
+                          <td class="red-text bold">Declined</td>
+                          <td>
+                            <div class="center-btn">
+                             <a class="waves-effect waves-light btn btn-small center-text">Resend</a>
+                              <a class="waves-effect waves-light btn btn-small center-text">Received</a>
+                              <a class="waves-effect waves-light btn btn-small center-text">Cancel</a>
+                            </div>
+                          </td>
+                        </tr>
                       </tbody>
                     </table>
                   </div>
-                  <!-- <p>
-                    You have no items.
-                  </p> -->
 
-                  <div class="clearfix">
+                   <div class="clearfix">
 
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
+      </div> 
     </main>
 
     <!-- SCRIPTS START -->

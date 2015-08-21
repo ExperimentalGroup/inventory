@@ -15,9 +15,43 @@ class HomeController extends BaseController {
 	|
 	*/
 
-	public function showWelcome()
+	public function employee()
 	{
-		return View::make('hello');
+		// Get all products from the database
+		$employees = Employee::all();
+
+		return View::make('employee')->with ('employees', $employees);
 	}
 
+	public function inventoree()
+	{
+		// Get all products from the database
+		$inventory = Inventory::all();
+		$products = Product::all();
+		return View::make('inventory')->with('inventory', $inventory)->with('products',$products);
+	}
+
+	public function branches()
+	{
+		// Get all products from the database
+		$branches = Branch::all();
+
+		return View::make('branches')->with('branches', $branches);
+	}
+
+	public function suppliers()
+	{
+		// Get all products from the database
+		$suppliers = Supplier::all();
+
+		return View::make('suppliers')->with('suppliers', $suppliers);
+	}
+
+	public function delivery()
+	{
+		// Get all products from the database
+		//$suppliers = Supplier::all();
+
+		return View::make('delivery');
+	}
 }
