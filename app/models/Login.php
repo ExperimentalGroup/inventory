@@ -3,4 +3,5 @@
 class Login extends Eloquent
 {
 	protected $table = 'tblLogin';
+
 }
