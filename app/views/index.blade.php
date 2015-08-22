@@ -83,8 +83,8 @@
                       <td>
                         <div class="center-btn">
                           <a class="waves-effect waves-light btn btn-small center-text">Order</a>
-                          <a class="waves-effect waves-light btn btn-small center-text">Request</a>
-                          <a class="waves-effect waves-light btn btn-small center-text">Adjust</a>
+                          <!-- <a class="waves-effect waves-light btn btn-small center-text">Request</a>
+                          <a class="waves-effect waves-light btn btn-small center-text">Adjust</a> -->
                         </div>
                       </td>
                     </tr>
@@ -94,8 +94,8 @@
                       <td>
                         <div class="center-btn">
                           <a class="waves-effect waves-light btn btn-small center-text">Order</a>
-                          <a class="waves-effect waves-light btn btn-small center-text">Request</a>
-                          <a class="waves-effect waves-light btn btn-small center-text">Adjust</a>
+                          <!-- <a class="waves-effect waves-light btn btn-small center-text">Request</a>
+                          <a class="waves-effect waves-light btn btn-small center-text">Adjust</a> -->
                         </div>
                       </td>
                     </tr>
