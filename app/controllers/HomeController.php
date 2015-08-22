@@ -27,8 +27,9 @@ class HomeController extends BaseController {
 	{
 		// Get all products from the database
 		$inventory = Inventory::all();
-		$products = Product::all();
-		return View::make('inventory')->with('inventory', $inventory)->with('products',$products);
+		//$products = Product::all();
+		
+		return View::make('inventory')->with('inventory', $inventory);
 	}
 
 	public function branches()

@@ -114,7 +114,13 @@
                           <td>{{ $inventory-> dblCurRetPrice }}</td>
                           <td>{{ $inventory-> dblCurWPrice }}</td>
                           <td>{{ $inventory-> intAvailQty }}</td>
-                          <td class="red-text bold">INCOMPLETE PA</td>
+                         @if($inventory->intAvailQty <= 1)
+                          <td class="red-text bold">DEPLETED</td>
+                          @elseif($inventory->intAvailQty <= 10)
+                          <td class="orange-text bold">CRITICAL</td>
+                          @else
+                          <td class="green-text bold">GOOD</td>
+                         @endif 
                           <td>
                             <div class="center-btn">
                               <a class="waves-effect waves-light btn btn-small center-text" href="/order">ADJUST</a>
