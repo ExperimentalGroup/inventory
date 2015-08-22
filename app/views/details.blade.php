@@ -77,7 +77,12 @@
                         </tr>
                       </thead>
                       <tbody>
-                       
+                          @foreach($details as $tempdetails)
+                            <tr>
+                              <td>{{ $tempdetails -> strProdName}}</td>
+                              <td>{{ $tempdetails -> str}}</td>
+                            </tr>
+                          @endforeach
                       </tbody>
                     </table>
                   </div>

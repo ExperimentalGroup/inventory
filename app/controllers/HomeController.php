@@ -78,9 +78,20 @@ class HomeController extends BaseController {
 	public function details()
 	{
 		// $details = Details::all();
-		$details = DB::table('tblProducts')->join('tblOrderedProducts','tblOrderedProducts.strOPProdID','=','tblProducts.strProdID')->get();
+		// $details = DB::table('tblOrderedProducts')->join('tblProducts','tblOrderedProducts.strOPProdID','=','tblProducts.strProdID')->join('tblOrders', 'tblOrderedProducts.strOPOrdersID','=', 'tblOrders.strOrdersID')->get();
+		$details = DB::table('tblOrderedProducts')
+        ->join('tblOrders', function($join)
+        {
+            $join->on('tblOrderedProducts.strOPOrdersID', '=', 'tblOrders.strOrdersID')
+                 ->where('tblOrders.strOrdersID', '=', 'ORD001');
+        })
+        ->join('tblProducts', function($join2)
+        {
+        	$join2->on('tblOrderedProducts.strOPProdID','=','tblProducts.strProdID');
+        })
+        ->get();
 
-		return View::make('details');
+		return View::make('details')->with('details', $details);
 		 //->with('details', $details);
 	}
 
