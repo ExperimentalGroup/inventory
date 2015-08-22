@@ -56,6 +56,7 @@ class HomeController extends BaseController {
 		return View::make('delivery');
 	}
 
+<<<<<<< HEAD
 	public function createBranch()
 	{
 		$branch = Branch::create(array(
@@ -66,4 +67,23 @@ class HomeController extends BaseController {
 
 		//return Redirect::to('/branches');
 	}
+=======
+	public function order()
+	{
+		// Get all products from the database
+		$order = Order::all();
+
+		return View::make('order')->with('order', $order);
+	}
+
+	public function details()
+	{
+		// $details = Details::all();
+		$details = DB::table('tblProducts')->join('tblOrderedProducts','tblOrderedProducts.strOPProdID','=','tblProducts.strProdID')->get();
+
+		return View::make('details');
+		 //->with('details', $details);
+	}
+
+>>>>>>> edfcd4d9432a4716dccd21f2a977a128f78dc299
 }

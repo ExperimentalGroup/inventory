@@ -47,55 +47,15 @@
         <!-- ACTUAL PAGE CONTENT GOES HERE -->
         <div class="row">
           <div class="col s12 m12 l12">
-            <span class="page-title">Employees</span>
+            <span class="page-title"> Order</span>
           </div>
 
-           <div class="row">
-            <div class="col s12 m12 l12">
-              <div class="card-panel">
-                <span class="card-title">Add New Employees</span>
-                <div class="divider"></div>
-                <div class="card-content">
-                  <div class="col s12 m12 l4">
-                      <div class="form-group">
-                      <label for="price">Employee ID</label>
-                      <input type="text" class="form-control" name="empID" id="empID" placeholder="EmpID">
-                      </div>
-                      <label for="price">Employee Name</label>
-                      <div class="form-group">
-                      <input type="text" class="form-control" name="empName" id="empName" placeholder="EmpName">
-                      </div>
-                      <div class="form-group">
-                      <label for="price">Age</label>
-                      <input type="text" class="form-control" name="empAdd" id="empAdd" placeholder="EmpAdd">
-                      </div>
-                      <div class="form-group">
-                      <label for="price">Status</label>
-                      <input type="text" class="form-control" name="empStatus" id="empStatus" placeholder="EmpStatus">
-                      </div>
-                      <div class="form-group">
-                      <label for="price">Address</label>
-                      <input type="text" class="form-control" name="empAdd" id="empAdd" placeholder="EmpAdd">
-                      </div>
-                      <a class="waves-effect waves-light btn btn-small center-text">ADD</a>
-                    </div>
-                  </div>
            
-           
-
-                  <div class="clearfix">
-
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-       
 
           <div class="row">
             <div class="col s12 m12 l12">
               <div class="card-panel">
-                <span class="card-title">gHuB Employees in current Branch</span>
+                <span class="card-title">Order Details</span>
                 <div class="divider"></div>
                 <div class="card-content">
                   <div class="col s12 m12 l4">
@@ -110,21 +70,14 @@
                     <table class="centered">
                       <thead>
                         <tr>
-                          <th>Employee ID</th>
-                          <th>Employee Name</th>
-                          <th>Status</th>
-                          <th>Address</th>
+                          <th>Ordered Items</th>
+                          <th>Quantity</th>
+                          <th>Price Subtotals</th>
+                          <th>Total Price</th>
                         </tr>
                       </thead>
                       <tbody>
-                       @foreach($employees as $employees)
-                        <tr>
-                          <td>{{ $employees->strEmpID }}</td>  
-                          <td>{{ $employees->strEmpLName . ", " . $employees->strEmpFName}}</td>
-                          <td>{{ $employees->strEmpStatus }}</td>  
-                          <td>{{ $employees->strEmpAddress }}</td>
-                        </tr>
-                        @endforeach
+                       
                       </tbody>
                     </table>
                   </div>

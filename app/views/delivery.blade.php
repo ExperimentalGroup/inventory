@@ -123,7 +123,7 @@
                       <thead>
                         <tr>
                           <th>Branch</th>
-                          <th>Product Requested</th>
+                          <th>Delivered Products</th>
                           <th>Quantity</th>
                           <th>Product Subtotals</th>
                           <th>Total Price</th>
