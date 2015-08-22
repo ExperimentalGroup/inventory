@@ -145,7 +145,7 @@
                           <td>
                             <div class="center-btn">
                               <a class="waves-effect waves-light btn btn-small center-text">Resend</a>
-                              <a class="waves-effect waves-light btn btn-small center-text">Received</a>
+                              <!-- <a class="waves-effect waves-light btn btn-small center-text">Received</a> -->
                               <a class="waves-effect waves-light btn btn-small center-text">Cancel</a>
                             </div>
                           </td>
@@ -160,8 +160,8 @@
                           <td class="red-text bold">Declined</td>
                           <td>
                             <div class="center-btn">
-                             <a class="waves-effect waves-light btn btn-small center-text">Resend</a>
-                              <a class="waves-effect waves-light btn btn-small center-text">Received</a>
+                             <a class="waves-effect waves-light btn btn-small center-text">Resend</a><!-- 
+                              <a class="waves-effect waves-light btn btn-small center-text">Received</a> -->
                               <a class="waves-effect waves-light btn btn-small center-text">Cancel</a>
                             </div>
                           </td>
