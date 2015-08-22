@@ -6,7 +6,7 @@
     <!-- STYLES START -->
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css">
     <link type="text/css" rel="stylesheet" href="css/style.css">
-    <!-- STYLES END -->
+    <!-- STYLES END --> 
   </head>
   <body>
     <header>

@@ -7,7 +7,7 @@ class HomeController extends BaseController {
 	| Default Home Controller
 	|--------------------------------------------------------------------------
 	|
-	| You may wish to use controllers instead of, or in addition to, Closure
+	| You may wish to use controllers instead of, or in addition to, Closure 
 	| based routes. That's great! Here is an example controller method to
 	| get you started. To route to this controller, just add the route:
 	|
@@ -27,7 +27,7 @@ class HomeController extends BaseController {
 	{
 		// Get all products from the database
 		$inventory = Inventory::all();
-		//$products = Product::all();
+		//$products = DB::table('tblInventory')->join('tblProducts', 'tblProducts.strProductCode', '=', 'tblInventory.strProductCode')->get(); 
 		
 		return View::make('inventory')->with('inventory', $inventory);
 	}
@@ -54,5 +54,16 @@ class HomeController extends BaseController {
 		//$suppliers = Supplier::all();
 
 		return View::make('delivery');
+	}
+
+	public function createBranch()
+	{
+		$branch = Branch::create(array(
+			'strBrchID' => Input::get('brnchID'),
+			'strBrchName' => Input::get('brnchName'),
+			'strBrchAddress' => Input::get('brnchAdd')
+		));
+
+		//return Redirect::to('/branches');
 	}
 }
