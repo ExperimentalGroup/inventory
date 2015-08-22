@@ -31,12 +31,9 @@ Route::get('/suppliers', 'HomeController@suppliers');
 
 Route::get('/delivery', 'HomeController@delivery');
 
-<<<<<<< HEAD
 Route::post('/branches', array('uses'=>'HomeController@createBranch'));
 
-=======
 Route::get('/details', 'HomeController@details');
->>>>>>> edfcd4d9432a4716dccd21f2a977a128f78dc299
 
 Route::get('/order', 'HomeController@order');
 

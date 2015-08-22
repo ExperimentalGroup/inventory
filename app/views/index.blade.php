@@ -188,7 +188,7 @@
               </div>
             </div>
 
-            <div class="card-panel">
+            <!-- <div class="card-panel">
               <span class="card-title">Pending requests</span>
               <div class="divider"></div>
               <div class="card-content">
@@ -222,7 +222,7 @@
                 <!-- <p>
                   You have no pending requests.
                 </p> -->
-              </div>
+              </div> 
             </div>
           </div>
         </div>
