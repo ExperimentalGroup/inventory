@@ -50,6 +50,7 @@
             <span class="page-title">Branches</span>
           </div>
             <div class="row">
+            <form action="/branches" method="POST">
             <div class="col s12 m12 l12">
               <div class="card-panel">
                 <span class="card-title">Add New Branches</span>
@@ -68,10 +69,8 @@
                       <label for="price">Branch Address</label>
                       <input type="text" class="form-control" name="brnchAdd" id="brnchAdd" placeholder="BranchAdd">
                       </div>
-                      <button type="submit" class="waves-effect waves-light btn btn-small center-text" action="/branches" method="post"'>ADD</button>
-                      <!-- <form action="/branches" method="post">
-                        <button>Submit</button>
-                      </form> -->
+                      <button type="submit" class="waves-effect waves-light btn btn-small center-text">ADD</button>
+                      </form>
                     </div>
                   </div>
            

@@ -20,6 +20,7 @@ class TblAdjustments extends Migration {
 			$table->string('strAdjReason');
 			$table->date('dtAdjDate');
 			$table->string('strAdjBatchID');//fk
+			$table->timestamps();
 		});
 	}
 

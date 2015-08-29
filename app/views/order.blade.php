@@ -105,18 +105,19 @@
                         </tr>
                       </thead>
 
-                      <tbody>
-                        @foreach($order as $order)
+                       <tbody>
+                        @foreach($jt as $joined)
                         <tr>
-                          <td>{{ $order-> strOrdersID }}</td>
-                          <td>{{ $order-> strSupplID }}</td>
-                          <td>{{ $order-> dtOrdDate }}</td>
-                          <td>Pending</td>
-                          <td>{{ $order-> strPlacedBy }}</td>                          
+                          <td>{{ $joined -> strOrdersID }}</td>
+                          <td>{{ $joined -> strSuppCompanyName }}</td>
+                          <td>{{ $joined -> dtOrdDate }}</td>
+                          <td>{{ $joined -> strOrdNotesStat }}</td>
+                          <td>{{ $joined -> strEmpLName.', '. $joined -> strEmpFName}}</td>                          
                           <td>
-                            <div class="center-btn">
+                            <!-- <div class="center-btn">
                               <a class="waves-effect waves-light btn btn-small center-text" href="/details">View Details</a>
-                            </div>
+                            </div> -->
+                            {{ HTML::link('/details/'.$joined -> strOrdersID, 'View Details') }}
                           </td>
                         </tr>
                         @endforeach

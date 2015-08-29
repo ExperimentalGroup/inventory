@@ -79,8 +79,8 @@
                       <tbody>
                           @foreach($details as $tempdetails)
                             <tr>
-                              <td>{{ $tempdetails -> strProdName}}</td>
-                              <td>{{ $tempdetails -> str}}</td>
+                              <td>{{ $tempdetails->strProdName}}</td>
+                              <td>{{ $tempdetails->intOPQuantity}}</td>
                             </tr>
                           @endforeach
                       </tbody>

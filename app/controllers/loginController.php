@@ -20,8 +20,17 @@ class loginController extends \BaseController {
 
 			Session::put('username', '$un');
 			$id = Login::all();
-			return View::make('index')->with('id',$id);
 
+			//dashboard(danger stocks)
+			$index = DB::table('tblInventory')
+			->join('tblProducts',function($join)
+			{
+				$join->on('tblInventory.strProdID','=','tblProducts.strProdID')
+					 ->where('tblInventory.intAvailQty','<=','10');
+			})->get();
+
+			
+			return View::make('index')->with('id',$id)->with('index', $index);
 		}
 		else
 			return Redirect::to('/')->with('message', 'Login Failed, USERNAME/PASSWORD Dont Exists');
@@ -32,10 +41,20 @@ class loginController extends \BaseController {
 	{
 		if(!Session::has('username'))
 		{
-		return Redirect::to('/');
+			return Redirect::to('/');
 		}
 		else
-		return View::make('index');
+		{
+			$index = DB::table('tblInventory')
+			->join('tblProducts',function($join)
+			{
+				$join->on('tblInventory.strProdID','=','tblProducts.strProdID')
+					 ->where('tblInventory.intAvailQty','<=','10');
+			})->get();
+
+			return View::make('index')->with('index', $index);
+		}
+		
 	}
 
 	public function LogOut()

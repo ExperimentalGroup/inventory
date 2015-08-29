@@ -33,9 +33,15 @@ Route::get('/delivery', 'HomeController@delivery');
 
 Route::post('/branches', array('uses'=>'HomeController@createBranch'));
 
-Route::get('/details', 'HomeController@details');
+Route::post('/suppliers', array('uses'=>'HomeController@createSupp'));
+
+Route::post('/employees', array('uses'=>'HomeController@createEmp'));
+
+Route::get('/details/{id}', 'HomeController@details');
 
 Route::get('/order', 'HomeController@order');
+
+Route::get('/smart', 'HomeController@smart');
 
 Route::get('/request', function()
 {

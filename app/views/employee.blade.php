@@ -58,16 +58,25 @@
                 <div class="card-content">
                   <div class="col s12 m12 l4">
                       <div class="form-group">
+                      <form action="/employees" method="POST">
                       <label for="price">Employee ID</label>
                       <input type="text" class="form-control" name="empID" id="empID" placeholder="EmpID">
                       </div>
-                      <label for="price">Employee Name</label>
+                      <label for="price">Employee Last Name</label>
                       <div class="form-group">
-                      <input type="text" class="form-control" name="empName" id="empName" placeholder="EmpName">
+                      <input type="text" class="form-control" name="emplName" id="emplName" placeholder="EmpLName">
+                      </div>
+                      <label for="price">Employee First Name</label>
+                      <div class="form-group">
+                      <input type="text" class="form-control" name="empfName" id="empfName" placeholder="EmpFName">
                       </div>
                       <div class="form-group">
-                      <label for="price">Age</label>
-                      <input type="text" class="form-control" name="empAdd" id="empAdd" placeholder="EmpAdd">
+                      <label for="price">Branch</label>
+                      <input type="text" class="form-control" name="empBrnch" id="empBrnch" placeholder="EmpBrnch">
+                      </div>
+                      <div class="form-group">
+                      <label for="price">Role</label>
+                      <input type="text" class="form-control" name="empRole" id="empRole" placeholder="EmpRole">
                       </div>
                       <div class="form-group">
                       <label for="price">Status</label>
@@ -77,7 +86,8 @@
                       <label for="price">Address</label>
                       <input type="text" class="form-control" name="empAdd" id="empAdd" placeholder="EmpAdd">
                       </div>
-                      <a class="waves-effect waves-light btn btn-small center-text">ADD</a>
+                      <button class="waves-effect waves-light btn btn-small center-text">ADD</button>
+                    </form>
                     </div>
                   </div>
            

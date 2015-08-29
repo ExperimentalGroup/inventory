@@ -107,13 +107,13 @@
                       <tbody>
                          @foreach($inventory as $inventory)
                         <tr>
-                          <td>{{ $inventory-> strProdID }}</td>
-                          <td>Name</td>
-                          <td>Brand</td>
-                          <td>Mudel</td>
-                          <td>{{ $inventory-> dblCurRetPrice }}</td>
-                          <td>{{ $inventory-> dblCurWPrice }}</td>
-                          <td>{{ $inventory-> intAvailQty }}</td>
+                          <td>{{ $inventory->strProdID }}</td>
+                          <td>{{ $inventory->strProdName }}</td>
+                          <td>{{ $inventory->strProdBrand }}</td>
+                          <td>{{ $inventory->strProdModel }}</td>
+                          <td>{{ $inventory->dblCurRetPrice }}</td>
+                          <td>{{ $inventory->dblCurWPrice }}</td>
+                          <td>{{ $inventory->intAvailQty }}</td>
                          @if($inventory->intAvailQty <= 1)
                           <td class="red-text bold">DEPLETED</td>
                           @elseif($inventory->intAvailQty <= 10)

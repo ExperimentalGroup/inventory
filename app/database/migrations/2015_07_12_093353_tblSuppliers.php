@@ -19,6 +19,7 @@ class TblSuppliers extends Migration {
 			$table->string('strSuppOwnerFName');
 			$table->string('strSuppContactNo');
 			$table->string('strSuppAddress');
+			$table->timestamps();
 		});
 	}
 

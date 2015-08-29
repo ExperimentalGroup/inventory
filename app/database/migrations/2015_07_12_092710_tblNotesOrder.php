@@ -16,6 +16,7 @@ class TblNotesOrder extends Migration {
 			$table->string('strOrdNotesID')->primary();
 			$table->string('strOrdersID');//fk
 			$table->string('strOrdNotesStat');
+			$table->timestamps();
 		});
 	}
 

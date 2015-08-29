@@ -15,6 +15,8 @@ class TblRoles extends Migration {
 		Schema::create('tblRoles', function(Blueprint $table){
 			$table->string('strRoleID')->primary();
 			$table->string('strRoleDescription');
+			$table->datetime('created_at');
+			$table->datetime('updated_at');
 		});
 	}
 

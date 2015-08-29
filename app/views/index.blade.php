@@ -64,7 +64,7 @@
               <div class="divider"></div>
               <div class="card-content">
                 <p>
-                  2 of your items are in <span class="red-text bold">danger</span> stocks.
+                  These items are in <span class="red-text bold">danger</span> stocks.
                 </p>
 
                 <table class="centered">
@@ -77,28 +77,19 @@
                   </thead>
 
                   <tbody>
+                    @foreach($index as $status)
                     <tr>
-                      <td>Razer Deathadder 2013</td>
-                      <td>1</td>
+                      <td>{{ $status -> strProdName }}</td>
+                      <td>{{ $status -> intAvailQty }}</td>
                       <td>
                         <div class="center-btn">
                           <a class="waves-effect waves-light btn btn-small center-text">Order</a>
-                          <!-- <a class="waves-effect waves-light btn btn-small center-text">Request</a>
-                          <a class="waves-effect waves-light btn btn-small center-text">Adjust</a> -->
+                          <!-- <a class="waves-effect waves-light btn btn-small center-text">Request</a> -->
+                          <a class="waves-effect waves-light btn btn-small center-text">Adjust</a>
                         </div>
                       </td>
                     </tr>
-                    <tr>
-                      <td>iPhone 6</td>
-                      <td>0</td>
-                      <td>
-                        <div class="center-btn">
-                          <a class="waves-effect waves-light btn btn-small center-text">Order</a>
-                          <!-- <a class="waves-effect waves-light btn btn-small center-text">Request</a>
-                          <a class="waves-effect waves-light btn btn-small center-text">Adjust</a> -->
-                        </div>
-                      </td>
-                    </tr>
+                    @endforeach
                   </tbody>
                 </table>
 
@@ -188,7 +179,7 @@
               </div>
             </div>
 
-            <!-- <div class="card-panel">
+            <div class="card-panel">
               <span class="card-title">Pending requests</span>
               <div class="divider"></div>
               <div class="card-content">
@@ -222,7 +213,7 @@
                 <!-- <p>
                   You have no pending requests.
                 </p> -->
-              </div> 
+              </div>
             </div>
           </div>
         </div>

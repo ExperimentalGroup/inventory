@@ -26,8 +26,11 @@ class HomeController extends BaseController {
 	public function inventoree()
 	{
 		// Get all products from the database
-		$inventory = Inventory::all();
-		//$products = DB::table('tblInventory')->join('tblProducts', 'tblProducts.strProductCode', '=', 'tblInventory.strProductCode')->get(); 
+		$inventory = DB::table('tblInventory')
+		->join('tblProducts', function($join)
+		{
+			$join->on('tblInventory.strProdID','=','tblProducts.strProdID');
+		})->get();
 		
 		return View::make('inventory')->with('inventory', $inventory);
 	}
@@ -63,27 +66,67 @@ class HomeController extends BaseController {
 			'strBrchName' => Input::get('brnchName'),
 			'strBrchAddress' => Input::get('brnchAdd')
 		));
+		$branch->save();
+		return Redirect::to('/branches');
+	}
 
-		//return Redirect::to('/branches');
+	public function createSupp()
+	{
+		$suppliers = Supplier::create(array(
+			'strSuppCompanyName' => Input::get('compName'),
+			'strSuppOwnerLName' => Input::get('suppLName'),
+			'strSuppOwnerFName' => Input::get('suppFName'),
+			'strSuppContactNo' => Input::get('contNumb'),
+			'strSuppAddress' => Input::get('suppAdd')
+		));
+		//$suppliers->save();
+		return Redirect::to('/suppliers');
+	}
+
+	public function createEmp()
+	{
+		$employees = Employee::create(array(
+			'strEmpID' => Input::get('empID'),
+			'strEmpFName' => Input::get('empfName'),
+			'strEmpLName' => Input::get('emplName'),
+			'strEmpStatus' => Input::get('empStatus'),
+			'strEmpAddress' => Input::get('empAdd'),
+			'strEmpBrchID' => Input::get('empBrnch'),
+			'strEmpRoleID' => Input::get('empRole')
+		));
+		$employees->save();
+		return Redirect::to('/employees');
 	}
 
 	public function order()
 	{
 		// Get all products from the database
-		$order = Order::all();
+		$jt = DB::table('tblOrders')
+		->join('tblSuppliers', function($join)
+		{
+			$join->on('tblOrders.strSupplID','=','tblSuppliers.strSuppID');
+		})
+		->join('tblEmployees', function($join2)
+		{
+			$join2->on('tblOrders.strPlacedBy','=','tblEmployees.strEmpID');
+		})
+		->join('tblOrdNotes',function($join3)
+		{
+			$join3->on('tblOrdNotes.strOrdersID','=','tblOrders.strOrdersID');
+		})
+		->get();
 
-		return View::make('order')->with('order', $order);
+		return View::make('order')->with('jt', $jt);
+
 	}
 
 	public function details()
 	{
-		// $details = Details::all();
-		// $details = DB::table('tblOrderedProducts')->join('tblProducts','tblOrderedProducts.strOPProdID','=','tblProducts.strProdID')->join('tblOrders', 'tblOrderedProducts.strOPOrdersID','=', 'tblOrders.strOrdersID')->get();
 		$details = DB::table('tblOrderedProducts')
         ->join('tblOrders', function($join)
         {
             $join->on('tblOrderedProducts.strOPOrdersID', '=', 'tblOrders.strOrdersID')
-                 ->where('tblOrders.strOrdersID', '=', 'ORD001');
+                 ->where('tblOrders.strOrdersID', '=','orderid');
         })
         ->join('tblProducts', function($join2)
         {
@@ -92,8 +135,67 @@ class HomeController extends BaseController {
         ->get();
 
 		return View::make('details')->with('details', $details);
-		 //->with('details', $details);
 	}
 
+	public function smart()
+	{
+		$ID ="emp0111";
+
+		print_r("Recent ID retrieved from database: " . $ID);
+		
+		$arrID = str_split($ID);
+
+		echo "<br />";
+			echo "To Array: ";
+		echo "<pre>";
+			print_r($arrID);
+		echo "</pre>";
+
+		$new = "";
+		$somenew = "";
+		$arrNew = [];
+		$boolAdd = TRUE;
+
+		for($ctr = count($arrID) - 1; $ctr >= 0; $ctr--)
+		{
+			$new = $arrID[$ctr];
+
+			if($boolAdd)
+			{
+
+				if(is_numeric($new) || $new == '0')
+				{
+					if($new == '9')
+					{
+						$new = '0';
+						$arrNew[$ctr] = $new;
+					}
+					else
+					{
+						$new = $new + 1;
+						$arrNew[$ctr] = $new;
+						$boolAdd = FALSE;
+					}//else
+				}//if(is_numeric($new))
+				else
+				{
+					$arrNew[$ctr] = $new;
+				}//else
+			}//if ($boolAdd)
+			
+			$arrNew[$ctr] = $new;
+		}//for
+
+		for($ctr2 = 0; $ctr2 < count($arrID); $ctr2++)
+		{
+			$somenew = $somenew . $arrNew[$ctr2] ;
+		}
+
+		echo "<br />";
+			print_r("Newly created ID : ");
+		echo "<pre>";
+			print_r($somenew);
+		echo "</pre>";
+	}
 
 }

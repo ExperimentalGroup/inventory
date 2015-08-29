@@ -58,16 +58,17 @@
                 <div class="card-content">
                   <div class="col s12 m12 l4">
                       <div class="form-group">
-                      <label for="price">Supplier ID</label>
-                      <input type="text" class="form-control" name="suppID" id="suppID" placeholder="SuppID">
-                      </div>
+                      <form action="/suppliers" method="POST">
                       <label for="price">Company Name</label>
+                      <input type="text" class="form-control" name="compName" id="compName" placeholder="Company">
+                      </div>
+                      <label for="price">Owner Last Name</label>
                       <div class="form-group">
-                      <input type="text" class="form-control" name="compName" id="compName" placeholder="CompName">
+                      <input type="text" class="form-control" name="suppLName" id="suppLName" placeholder="Surname">
                       </div>
                       <div class="form-group">
-                      <label for="price">Owner Name</label>
-                      <input type="text" class="form-control" name="ownName" id="ownName" placeholder="OwnName">
+                      <label for="price">Owner First Name</label>
+                      <input type="text" class="form-control" name="suppFName" id="suppFName" placeholder="Given Name">
                       </div>
                       <div class="form-group">
                       <label for="price">Contact Number</label>
@@ -77,7 +78,8 @@
                       <label for="price">Address</label>
                       <input type="text" class="form-control" name="suppAdd" id="suppAdd" placeholder="SuppAdd">
                       </div>
-                      <a class="waves-effect waves-light btn btn-small center-text">ADD</a>
+                      <button class="waves-effect waves-light btn btn-small center-text">ADD</button>
+                    </form>
                     </div>
                   </div>
            
