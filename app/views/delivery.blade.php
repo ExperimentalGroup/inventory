@@ -50,10 +50,10 @@
             <span class="page-title">Delivery</span>
           </div>
 
-          <div class="row">
+          <!-- <div class="row">
             <div class="col s12 m12 l12">
               <div class="card-panel">
-                <span class="card-title">Delivery from Suppliers</span>
+                //<span class="card-title">Delivery from Suppliers</span>
                 <div class="divider"></div>
                 <div class="card-content">
                   <div class="col s12 m12 l4">
@@ -61,9 +61,8 @@
                       <i class="prefix mdi-action-search"></i>
                       <input id="search" type="text" placeholder="Search by name"/>
                     </div>
-                  </div>
+                  </div> -->
 
-                  
 
 
                   <!-- <p>
@@ -83,7 +82,7 @@
                   <div class="row">
             <div class="col s12 m12 l12">
               <div class="card-panel">
-                <span class="card-title">Delivery to Branches</span>
+                <span class="card-title">Delivery from Suppliers</span>
                 <div class="divider"></div>
                 <div class="card-content">
                   <div class="col s12 m12 l4">
@@ -122,48 +121,52 @@
                     <table class="centered">
                       <thead>
                         <tr>
-                          <th>Branch</th>
+                          <th>Delivery ID</th>
+                          <th>Supplier</th>
                           <th>Delivered Products</th>
                           <th>Quantity</th>
-                          <th>Product Subtotals</th>
-                          <th>Total Price</th>
-                          <th>Date Requested</th>
+                          <!-- <th>Product Subtotals</th>
+                          <th>Total Price</th> -->
+                          <th>Date Delivered</th>
+                          <th>Received By</th>
                           <th>Status</th>
-                          <th>Actions</th>
+                          <!-- <th>Actions</th> -->
                         </tr>
                       </thead>
 
                       <tbody>
                         <tr>
-                          <td>gHub West Avenue</td>
+                          <td>SUPPL0001</td>
+                          <td>Nokia Holdings<>
                           <td>LG Flat Screen Monitor</td>
                           <td>10</td>
-                          <td>P1,500.00</td>
-                          <td>P15,000.00</td>
+                         <!--  <td>P1,500.00</td>
+                          <td>P15,000.00</td> -->
                           <td>06/18/2015</td>
+                          <td>Mother Anna</td>
                           <td class="yellow-text bold">Pending</td>
                           <td>
-                            <div class="center-btn">
+                            <!-- <div class="center-btn">
                               <a class="waves-effect waves-light btn btn-small center-text">Resend</a>
-                              <!-- <a class="waves-effect waves-light btn btn-small center-text">Received</a> -->
+                              <a class="waves-effect waves-light btn btn-small center-text">Received</a>
                               <a class="waves-effect waves-light btn btn-small center-text">Cancel</a>
-                            </div>
+                            </div> -->
                           </td>
                         </tr>
                         <tr>
-                          <td>gHub Eastwood</td>
-                          <td>Creative Dual Speakers with Bass</td>
+                         <!--  <td>gHub Eastwood</td> -->
+                          <!-- <td>Creative Dual Speakers with Bass</td>
                           <td>15</td>
                           <td>P500.00</td>
                           <td>P7,500.00</td>
                           <td>03/31/2015</td>
-                          <td class="red-text bold">Declined</td>
+                          <td class="red-text bold">Declined</td> -->
                           <td>
-                            <div class="center-btn">
-                             <a class="waves-effect waves-light btn btn-small center-text">Resend</a><!-- 
-                              <a class="waves-effect waves-light btn btn-small center-text">Received</a> -->
+                            <!-- <div class="center-btn">
+                             <a class="waves-effect waves-light btn btn-small center-text">Resend</a>
+                              <a class="waves-effect waves-light btn btn-small center-text">Received</a>
                               <a class="waves-effect waves-light btn btn-small center-text">Cancel</a>
-                            </div>
+                            </div> -->
                           </td>
                         </tr>
                       </tbody>
