@@ -58,8 +58,10 @@
                 <div class="card-content">
                   <div class="col s12 m12 l4">
                       <div class="form-group">
-                      <label for="price">Branch ID</label>
-                      <input type="text" class="form-control" name="brnchID" id="brnchID" placeholder="BranchID">
+                      <!-- <label for="price">Branch ID</label>
+                      <input type="text" class="form-control" name="brnchID" id="brnchID" placeholder="BranchID"> -->
+                        <label for="disabled">Branch ID</label>
+                        <input value={{$somenew}} name="brnchID" id="brnchID" placeholder="BranchID" type="text" class="form-control">
                       </div>
                       <div class="form-group">
                       <label for="price">Branch Name</label>
@@ -112,7 +114,7 @@
                       <tbody>
                          @foreach($branches as $branches)
                         <tr>
-                          <td>{{ $branches->strBrchID }}</td>  
+                          <td>{{ $branches->strBrchID }}</td>
                           <td>{{ $branches->strBrchName }}</td>
                           <td>{{ $branches->strBrchAddress }}</td>
                         </tr>

@@ -37,10 +37,62 @@ class HomeController extends BaseController {
 
 	public function branches()
 	{
+		$ids = DB::table('tblBranches')
+			->select('strBrchID')
+			->orderBy('updated_at', 'desc')
+			->orderBy('strBrchID', 'desc')
+			->take(1)
+			->get();
+
+		$ID = $ids["0"]->strBrchID;
+		
+		$arrID = str_split($ID);
+
+		$new = "";
+		$somenew = "";
+		$arrNew = [];
+		$boolAdd = TRUE;
+
+		for($ctr = count($arrID) - 1; $ctr >= 0; $ctr--)
+		{
+			$new = $arrID[$ctr];
+
+			if($boolAdd)
+			{
+
+				if(is_numeric($new) || $new == '0')
+				{
+					if($new == '9')
+					{
+						$new = '0';
+						$arrNew[$ctr] = $new;
+					}
+					else
+					{
+						$new = $new + 1;
+						$arrNew[$ctr] = $new;
+						$boolAdd = FALSE;
+					}//else
+				}//if(is_numeric($new))
+				else
+				{
+					$arrNew[$ctr] = $new;
+				}//else
+			}//if ($boolAdd)
+			
+			$arrNew[$ctr] = $new;
+		}//for
+
+		for($ctr2 = 0; $ctr2 < count($arrID); $ctr2++)
+		{
+			$somenew = $somenew . $arrNew[$ctr2] ;
+		}
+
 		// Get all products from the database
+
 		$branches = Branch::all();
 
-		return View::make('branches')->with('branches', $branches);
+		return View::make('branches')->with('branches', $branches)->with('somenew', $somenew);
 	}
 
 	public function suppliers()
@@ -139,7 +191,17 @@ class HomeController extends BaseController {
 
 	public function smart()
 	{
-		$ID ="emp0111";
+		//$ID ="emp0111";
+
+		//Retriving lastest ID from the db
+		$ids = DB::table('tblBranches')
+			->select('strBrchID')
+			//->orderBy('updated_at', 'desc')
+			->orderBy('strBrchID', 'desc')
+			->take(1)
+			->get();
+
+		$ID = $ids["0"]->strBrchID;
 
 		print_r("Recent ID retrieved from database: " . $ID);
 		
